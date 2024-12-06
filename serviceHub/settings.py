@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'service',
     'rest_framework',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -82,6 +83,19 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'sevice_db',
+#         'USER': 'root',
+#         'PASSWORD': 'Admin',
+#         'HOST':'localhost',
+#         'PORT':'3306',
+#     }
+# }
+
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -123,3 +137,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# ceaz xhhe bdpz lwdi    - app passsword
+
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "sarathkv8895@gmail.com"
+EMAIL_HOST_PASSWORD="ceaz xhhe bdpz lwdi"
+EMAIL_USE_TLS = True

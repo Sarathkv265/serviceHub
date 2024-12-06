@@ -1,12 +1,26 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from django.core.exceptions import ValidationError
+
+from re import fullmatch
+
 # Create your models here.
+def validate_phone_number(value):
+    
+    rule = '[0-9]{10}'
+    
+    matcher=fullmatch(rule,value)
+    
+    if matcher==None:
+        
+        raise ValidationError('invalid phone number')
+    
 
 class Customer(models.Model):
     
     name = models.CharField(max_length=200)
-    phone = models.CharField(max_length=100)
+    phone = models.CharField(max_length=100,validators=[validate_phone_number])
     email = models.EmailField()
     vehicle_number = models.CharField(max_length=200)
     running_kilometer = models.PositiveIntegerField()
